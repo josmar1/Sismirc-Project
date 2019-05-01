@@ -49,7 +49,7 @@ void main()
    delay_us(10);
    valoradc=read_adc();
    milivolt=(valoradc*5000.0)/1023.0;
-   //formula vo=(10mV/C)(T°C)+600
+   //formula vo=(10mV/C)(TÂ°C)+600
    temperatura=(milivolt-550.0)/10.0;
    S[8]=temperatura;
    b=S[3]+S[4]+S[5]+S[6]+S[7]+S[8]+S[9]+S[10];
@@ -62,57 +62,6 @@ void main()
    delay_ms(10);
    output_high(pin_a4);
    delay_ms(500);
-      /*
-      delay_ms(30000);
-      int8 n=0;
-      for(n=0; n<10; n++)
-      {
-      putc(H[n]);
-      }
-      lcd_putc("\f");
-      lcd_gotoxy(1,1);
-      printf(lcd_putc,"Hablar");
-      delay_ms(1000);
-      lcd_putc("\f");
-      
-      delay_ms(12000);
-      //int8 a=0;
-      //for(a=0; a<15; a++)
-      //{
-      //putc(M[a]);
-      //}
-      //lcd_putc("\f");
-      //lcd_gotoxy(1,1);
-      //printf(lcd_putc,"MAC");
-      //delay_ms(1000);
-      //lcd_putc("\f");
-      
-      //delay_ms(12000);
-      int8 b=0;
-      for(b=0; b<10; b++)
-      {
-      putc(T[b]);
-      }
-      lcd_putc("\f");
-      lcd_gotoxy(1,1);
-      printf(lcd_putc,"Transmitir");
-      delay_ms(1000);
-      lcd_putc("\f");
-      
-      delay_ms(12000);
-      int8 c=0;
-      for(c=0; c<10; c++)
-      {
-      putc(S[c]);
-      }
-      lcd_putc("\f");
-      lcd_gotoxy(1,1);
-      printf(lcd_putc,"Trama");
-      delay_ms(1000);
-      lcd_putc("\f");
-      delay_ms(15000);
-      */
-      
    
    if(input(pin_b0)==1)
    {
